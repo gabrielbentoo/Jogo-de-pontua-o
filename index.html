@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de pontuação</title>
+</head>
+<body>
+    <h1>Jogo de pontuação</h1>
+    <p id="mensagem">Você ainda não jogou.</p>
+    <p id="resultado"></p>
+    <button onclick="verificarPontuacao()">Jogar</button>
+
+    <script>
+        let tentativas = 3;
+        function verificarPontuacao() {
+             let pontos = Math.floor(Math.random() * 20);
+            document.getElementById("resultado").innerText = pontos;
+            if (pontos >= 10) {
+            document.getElementById("mensagem").innerText = "Parabéns! Você venceu!";
+            }
+        else {
+            tentativas -=1;
+            if (tentativas >0) {
+                document.getElementById("mensagem").innerText = `Você perdeu, restam ${tentativas} tentativas`
+            }
+            else {
+            document.getElementById("mensagem").innerText = "Você não possui mais tentativas, GameOver.";
+            }
+
+        }
+    }
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
